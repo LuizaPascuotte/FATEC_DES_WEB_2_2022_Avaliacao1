@@ -1,14 +1,10 @@
 <?php
-// Inicializa uma sessão
-session_start();
 
-// Unset todas as variáveis
-$_SESSION = array();
+if(!isset($_SESSION)) {
+    session_start();
+}
 
-// Destruir a sessão.
 session_destroy();
 
-// Redireciona para página de login
-header("location: index.php");
-exit;
+header("Location: index.php");
 ?>
